@@ -3,13 +3,14 @@ import {
   h,
   Prop
 } from '@stencil/core';
-import { format } from '../../utils/utils';
+import format from '../../utils/utils';
 
 @Component({
   shadow: true,
   styleUrl: 'my-component.css',
   tag: 'my-component'
 })
+
 export class MyComponent {
 
   /**
