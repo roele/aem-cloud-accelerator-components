@@ -10,5 +10,6 @@ example.args = {
 
 export default {
   // this creates a ‘Components’ folder and a ‘MyComponent’ subfolder
+  tags: ['autodocs'],
   title: 'Components/MyComponent'
 };

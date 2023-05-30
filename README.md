@@ -9,7 +9,6 @@ These are the base webcomponents which will be used by the aem-cloud-accelerator
 3. Run ```npm start``` to build the stencil components and storybook together.
 
 ## Current Issues / Todo's
-- Doc's Tab is missing in Storybook
 - Live Reload:
   - If a .stories file is changed, live reload works. If the component files are changed, storybook does not automatically reloads.
 - @pxblue/storybook-rtl-addon is not working
