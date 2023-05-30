@@ -5,6 +5,9 @@ export const config: Config = {
   namespace: 'aem-cloud-accelerator-components',
   outputTargets: [
     {
+      type: 'dist-hydrate-script'
+    },
+    {
       esmLoaderPath: '../loader',
       type: 'dist'
     },
