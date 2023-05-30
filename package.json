@@ -28,7 +28,7 @@
     "lint:js": "eslint ./ --ext .js",
     "prepare": "husky install",
     "start:stencil": "stencil build --prod --watch --docs",
-    "start:storybook": "storybook dev -p 6006 -s ../dist",
+    "start:storybook": "storybook dev -p 6006",
     "start": "npm-run-all --sequential build:stencil --parallel start:stencil start:storybook",
     "test": "stencil test --spec --e2e"
   },
