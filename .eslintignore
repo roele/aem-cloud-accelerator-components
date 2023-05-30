@@ -1,0 +1,9 @@
+dist/
+loader/
+hydrate/
+src/components.d.ts
+storybook-static/
+www/
+
+# not ignored folders/files
+!.github/
