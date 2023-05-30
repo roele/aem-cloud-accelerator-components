@@ -1,4 +1,5 @@
 import { Config } from '@stencil/core';
+import { sass } from '@stencil/sass';
 
 export const config: Config = {
   namespace: 'aem-cloud-accelerator-components',
@@ -17,5 +18,6 @@ export const config: Config = {
       serviceWorker: null,
       type: 'www'
     }
-  ]
+  ],
+  plugins: [sass()]
 };
