@@ -1,7 +1,7 @@
 {
   "name": "aem-cloud-accelerator-components",
   "version": "0.0.1",
-  "description": "Stencil Component Starter",
+  "description": "AEM cloude accelerator base components",
   "main": "dist/index.cjs.js",
   "module": "dist/index.js",
   "es2015": "dist/esm/index.mjs",
@@ -12,22 +12,26 @@
   "unpkg": "dist/aem-cloud-accelerator-components/aem-cloud-accelerator-components.esm.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ionic-team/stencil-component-starter.git"
+    "url": "https://github.com/feerglas/aem-cloud-accelerator-components"
   },
   "files": [
     "dist/",
     "loader/"
   ],
   "scripts": {
-    "build": "stencil build --docs",
-    "start": "stencil build --dev --watch --serve",
-    "test": "stencil test --spec --e2e",
-    "test.watch": "stencil test --spec --e2e --watchAll",
+    "build:stencil": "stencil build --ci --prod --docs",
+    "build:storybook": "build-storybook --quiet",
+    "build": "npm-run-all --sequential build:stencil build:storybook",
     "generate": "stencil generate",
     "lint": "npm run lint:ts && npm run lint:js",
     "lint:ts": "eslint ./ --ext .ts,.tsx",
     "lint:js": "eslint ./ --ext .js",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "start:stencil": "stencil build --prod --watch --docs",
+    "start:storybook": "start-storybook -p 6006 -s dist",
+    "start": "npm-run-all --sequential build:stencil --parallel start:stencil start:storybook",
+    "test": "stencil test --spec --e2e",
+    "test.watch": "stencil test --spec --e2e --watchAll"
   },
   "dependencies": {
     "@stencil/core": "^3.0.0"
