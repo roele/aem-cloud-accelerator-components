@@ -1,0 +1,62 @@
+{
+  "name": "aem-cloud-accelerator-components",
+  "version": "0.0.1",
+  "description": "Stencil Component Starter",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.js",
+  "es2015": "dist/esm/index.mjs",
+  "es2017": "dist/esm/index.mjs",
+  "types": "dist/types/index.d.ts",
+  "collection": "dist/collection/collection-manifest.json",
+  "collection:main": "dist/collection/index.js",
+  "unpkg": "dist/aem-cloud-accelerator-components/aem-cloud-accelerator-components.esm.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ionic-team/stencil-component-starter.git"
+  },
+  "files": [
+    "dist/",
+    "loader/"
+  ],
+  "scripts": {
+    "build": "stencil build --docs",
+    "start": "stencil build --dev --watch --serve",
+    "test": "stencil test --spec --e2e",
+    "test.watch": "stencil test --spec --e2e --watchAll",
+    "generate": "stencil generate",
+    "prepare": "husky install"
+  },
+  "dependencies": {
+    "@stencil/core": "^3.0.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.22.1",
+    "@babel/plugin-syntax-jsx": "^7.21.4",
+    "@babel/plugin-transform-react-jsx": "^7.22.3",
+    "@commitlint/cli": "^17.6.3",
+    "@commitlint/config-conventional": "^17.6.3",
+    "@pxblue/storybook-rtl-addon": "^1.1.0",
+    "@stencil/sass": "^3.0.3",
+    "@storybook/addon-a11y": "^7.0.18",
+    "@storybook/addon-essentials": "^7.0.18",
+    "@storybook/html": "^7.0.18",
+    "@types/jest": "^27.5.2",
+    "@types/node": "^16.18.11",
+    "@types/puppeteer": "^7.0.4",
+    "@typescript-eslint/eslint-plugin": "^5.59.8",
+    "@typescript-eslint/parser": "^5.59.8",
+    "babel-loader": "^9.1.2",
+    "eslint": "^8.41.0",
+    "eslint-plugin-jest": "^27.2.1",
+    "eslint-plugin-jsx-a11y": "^6.7.1",
+    "husky": "^8.0.3",
+    "jest": "^27.5.1",
+    "jest-cli": "^27.5.1",
+    "jsx-dom": "^8.0.6",
+    "jsx-transform": "^2.4.1",
+    "npm-run-all": "^4.1.5",
+    "puppeteer": "^19.11.1",
+    "typescript": "^5.0.4"
+  },
+  "license": "MIT"
+}
