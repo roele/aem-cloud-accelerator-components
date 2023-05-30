@@ -20,7 +20,7 @@
   ],
   "scripts": {
     "build:stencil": "stencil build --ci --prod --docs",
-    "build:storybook": "build-storybook --quiet",
+    "build:storybook": "storybook build --quiet",
     "build": "npm-run-all --sequential build:stencil build:storybook",
     "generate": "stencil generate",
     "lint": "npm run lint:ts && npm run lint:js",
@@ -28,10 +28,9 @@
     "lint:js": "eslint ./ --ext .js",
     "prepare": "husky install",
     "start:stencil": "stencil build --prod --watch --docs",
-    "start:storybook": "start-storybook -p 6006 -s dist",
+    "start:storybook": "storybook dev -p 6006 -s ../dist",
     "start": "npm-run-all --sequential build:stencil --parallel start:stencil start:storybook",
-    "test": "stencil test --spec --e2e",
-    "test.watch": "stencil test --spec --e2e --watchAll"
+    "test": "stencil test --spec --e2e"
   },
   "dependencies": {
     "@stencil/core": "^3.0.0"
@@ -40,13 +39,20 @@
     "@babel/core": "^7.22.1",
     "@babel/plugin-syntax-jsx": "^7.21.4",
     "@babel/plugin-transform-react-jsx": "^7.22.3",
+    "@babel/preset-env": "^7.22.4",
+    "@babel/preset-typescript": "^7.21.5",
     "@commitlint/cli": "^17.6.3",
     "@commitlint/config-conventional": "^17.6.3",
     "@pxblue/storybook-rtl-addon": "^1.1.0",
     "@stencil/sass": "^3.0.3",
     "@storybook/addon-a11y": "^7.0.18",
     "@storybook/addon-essentials": "^7.0.18",
+    "@storybook/addon-interactions": "^7.0.18",
+    "@storybook/addon-links": "^7.0.18",
+    "@storybook/blocks": "^7.0.18",
     "@storybook/html": "^7.0.18",
+    "@storybook/html-webpack5": "^7.0.18",
+    "@storybook/testing-library": "^0.0.14-next.2",
     "@types/jest": "^27.5.2",
     "@types/node": "^16.18.11",
     "@types/puppeteer": "^7.0.4",
@@ -63,6 +69,9 @@
     "jsx-transform": "^2.4.1",
     "npm-run-all": "^4.1.5",
     "puppeteer": "^19.11.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "storybook": "^7.0.18",
     "typescript": "^5.0.4"
   },
   "license": "MIT"
