@@ -6,6 +6,12 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
+    interface CaButton {
+        /**
+          * The button text
+         */
+        "text": string;
+    }
     interface CaTitle {
         /**
           * The title text
@@ -28,6 +34,12 @@ export namespace Components {
     }
 }
 declare global {
+    interface HTMLCaButtonElement extends Components.CaButton, HTMLStencilElement {
+    }
+    var HTMLCaButtonElement: {
+        prototype: HTMLCaButtonElement;
+        new (): HTMLCaButtonElement;
+    };
     interface HTMLCaTitleElement extends Components.CaTitle, HTMLStencilElement {
     }
     var HTMLCaTitleElement: {
@@ -41,11 +53,18 @@ declare global {
         new (): HTMLMyComponentElement;
     };
     interface HTMLElementTagNameMap {
+        "ca-button": HTMLCaButtonElement;
         "ca-title": HTMLCaTitleElement;
         "my-component": HTMLMyComponentElement;
     }
 }
 declare namespace LocalJSX {
+    interface CaButton {
+        /**
+          * The button text
+         */
+        "text"?: string;
+    }
     interface CaTitle {
         /**
           * The title text
@@ -67,6 +86,7 @@ declare namespace LocalJSX {
         "middle"?: string;
     }
     interface IntrinsicElements {
+        "ca-button": CaButton;
         "ca-title": CaTitle;
         "my-component": MyComponent;
     }
@@ -75,6 +95,7 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "ca-button": LocalJSX.CaButton & JSXBase.HTMLAttributes<HTMLCaButtonElement>;
             "ca-title": LocalJSX.CaTitle & JSXBase.HTMLAttributes<HTMLCaTitleElement>;
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
         }
