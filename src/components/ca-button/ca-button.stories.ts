@@ -7,7 +7,7 @@ example.args = {
 };
 
 export default {
-  // this creates a ‘Components’ folder and a ‘CaTitle’ subfolder
+  // this creates a ‘Components’ folder and a ‘CaButton’ subfolder
   tags: ['autodocs'],
   title: 'Components/CaButton'
 };

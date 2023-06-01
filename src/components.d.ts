@@ -6,6 +6,12 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
+    interface CaAccordion {
+        /**
+          * The accordion text
+         */
+        "text": string;
+    }
     interface CaButton {
         /**
           * The button text
@@ -34,6 +40,12 @@ export namespace Components {
     }
 }
 declare global {
+    interface HTMLCaAccordionElement extends Components.CaAccordion, HTMLStencilElement {
+    }
+    var HTMLCaAccordionElement: {
+        prototype: HTMLCaAccordionElement;
+        new (): HTMLCaAccordionElement;
+    };
     interface HTMLCaButtonElement extends Components.CaButton, HTMLStencilElement {
     }
     var HTMLCaButtonElement: {
@@ -53,12 +65,19 @@ declare global {
         new (): HTMLMyComponentElement;
     };
     interface HTMLElementTagNameMap {
+        "ca-accordion": HTMLCaAccordionElement;
         "ca-button": HTMLCaButtonElement;
         "ca-title": HTMLCaTitleElement;
         "my-component": HTMLMyComponentElement;
     }
 }
 declare namespace LocalJSX {
+    interface CaAccordion {
+        /**
+          * The accordion text
+         */
+        "text"?: string;
+    }
     interface CaButton {
         /**
           * The button text
@@ -86,6 +105,7 @@ declare namespace LocalJSX {
         "middle"?: string;
     }
     interface IntrinsicElements {
+        "ca-accordion": CaAccordion;
         "ca-button": CaButton;
         "ca-title": CaTitle;
         "my-component": MyComponent;
@@ -95,6 +115,7 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "ca-accordion": LocalJSX.CaAccordion & JSXBase.HTMLAttributes<HTMLCaAccordionElement>;
             "ca-button": LocalJSX.CaButton & JSXBase.HTMLAttributes<HTMLCaButtonElement>;
             "ca-title": LocalJSX.CaTitle & JSXBase.HTMLAttributes<HTMLCaTitleElement>;
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
