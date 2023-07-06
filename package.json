@@ -1,6 +1,6 @@
 {
   "name": "aem-cloud-accelerator-components",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "AEM cloude accelerator base components",
   "main": "./dist/index.cjs.js",
   "module": "./dist/index.js",
