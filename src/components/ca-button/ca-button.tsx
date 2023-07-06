@@ -19,6 +19,7 @@ export class CaButton {
   }
 
   btnClick() {
+    alert('Button clicked')
     console.log(`You just clicked ${this.text}!`);
   }
 
