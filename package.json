@@ -20,9 +20,11 @@
     "hydrate"
   ],
   "scripts": {
-    "build:stencil": "stencil build --ci --prod --docs",
+    "build:stencil": "stencil build --ci --prod --docs && clientlib --verbose",
     "build:storybook": "storybook build --quiet",
     "build": "npm-run-all --sequential build:stencil build:storybook",
+    "build:express": "npx tsc -p tsconfig.express.json",
+    "preclientlib": "npm run build:stencil",
     "generate": "stencil generate",
     "lint": "npm run lint:ts && npm run lint:js",
     "lint:ts": "eslint ./ --ext .ts,.tsx",
@@ -30,6 +32,7 @@
     "prepare": "husky install",
     "start:stencil": "stencil build --prod --watch --docs",
     "start:storybook": "storybook dev -p 6006",
+    "start:express": "node ./dist/server/express.js",
     "start": "npm-run-all --sequential build:stencil --parallel start:stencil start:storybook",
     "test": "stencil test --spec --e2e"
   },
@@ -37,6 +40,7 @@
     "@stencil/core": "^3.0.0"
   },
   "devDependencies": {
+    "@aem-cloud-accelerator-components/hydrate": "file:hydrate",
     "@babel/core": "^7.22.1",
     "@babel/plugin-syntax-jsx": "^7.21.4",
     "@babel/plugin-transform-react-jsx": "^7.22.3",
@@ -54,15 +58,18 @@
     "@storybook/html": "^7.0.18",
     "@storybook/html-webpack5": "^7.0.18",
     "@storybook/testing-library": "^0.0.14-next.2",
+    "@types/express": "^4.17.13",
     "@types/jest": "^27.5.2",
     "@types/node": "^16.18.11",
     "@types/puppeteer": "^7.0.4",
     "@typescript-eslint/eslint-plugin": "^5.59.8",
     "@typescript-eslint/parser": "^5.59.8",
+    "aem-clientlib-generator": "^1.8.0",
     "babel-loader": "^9.1.2",
     "eslint": "^8.41.0",
     "eslint-plugin-jest": "^27.2.1",
     "eslint-plugin-jsx-a11y": "^6.7.1",
+    "express": "^4.18.2",
     "husky": "^8.0.3",
     "jest": "^27.5.1",
     "jest-cli": "^27.5.1",
